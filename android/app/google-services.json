@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "264767771108",
+    "project_id": "flix-id-course-23217",
+    "storage_bucket": "flix-id-course-23217.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264767771108:android:786edc931d07c4b73f77f1",
+        "android_client_info": {
+          "package_name": "com.papiruscoder.flix_id"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZdHVFRiMtQvkKCx8IBqAANlf_oQ-6waE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
