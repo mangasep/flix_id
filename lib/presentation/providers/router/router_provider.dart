@@ -8,19 +8,19 @@ part 'router_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 Raw<GoRouter> router(RouterRef ref) => GoRouter(routes: [
-  GoRoute(
-    path: '/main', 
-    name: 'main',
-    builder: (context, state) => MainPage(),
-  ),
-  GoRoute(
-    path: '/login',
-    name: 'login',
-    builder: (context, state) => LoginPage(),
-    ),
-  GoRoute(
-    path: '/register',
-    name: 'register',
-    builder: (context, state) => const RegisterPage(),
-    )
-], initialLocation: '/login', debugLogDiagnostics: false);
+      GoRoute(
+        path: '/main',
+        name: 'main',
+        builder: (context, state) => MainPage(),
+      ),
+      GoRoute(
+        path: '/login',
+        name: 'login',
+        builder: (context, state) => LoginPage(),
+      ),
+      GoRoute(
+        path: '/register',
+        name: 'register',
+        builder: (context, state) => RegisterPage(),
+      )
+    ], initialLocation: '/login', debugLogDiagnostics: false);
