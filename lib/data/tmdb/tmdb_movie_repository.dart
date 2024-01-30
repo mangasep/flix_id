@@ -9,7 +9,7 @@ import 'package:flix_id/utils/env.dart';
 class TmdbMovieRepository implements MovieRepository {
   final Dio? _dio;
 
-  final String _accessToken = Env.apiKeyTmdb;
+  final String _accessToken = Env.tmdbAccessToken;
   late final Options _options = Options(headers: {
     'Authorization': 'Bearer $_accessToken',
     'accept': 'application/json'
