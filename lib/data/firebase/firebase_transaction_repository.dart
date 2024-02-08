@@ -8,14 +8,20 @@ import 'package:cloud_firestore/cloud_firestore.dart' as firestore;
 class FirebaseTransactionRepository implements TransactionRepository {
   final firestore.FirebaseFirestore _firebaseFirestore;
 
-  FirebaseTransactionRepository({firestore.FirebaseFirestore? firebaseFirestore}): _firebaseFirestore = firebaseFirestore ?? firestore.FirebaseFirestore.instance;
-  
+  FirebaseTransactionRepository(
+      {firestore.FirebaseFirestore? firebaseFirestore})
+      : _firebaseFirestore =
+            firebaseFirestore ?? firestore.FirebaseFirestore.instance;
+
   @override
-  Future<Result<Transaction>> createTranscation({required Transaction transaction}) async {
-    firestore.CollectionReference<Map<String, dynamic>> transactions = _firebaseFirestore.collection('transactions');
+  Future<Result<Transaction>> createTransaction(
+      {required Transaction transaction}) async {
+    firestore.CollectionReference<Map<String, dynamic>> transactions =
+        _firebaseFirestore.collection('transactions');
 
     try {
-      var balanceResult = await FirebaseUserRepository().getUserBalance(uid: transaction.uid);
+      var balanceResult =
+          await FirebaseUserRepository().getUserBalance(uid: transaction.uid);
 
       if (balanceResult.isSuccess) {
         int previousBalance = balanceResult.resultValue!;
@@ -26,7 +32,10 @@ class FirebaseTransactionRepository implements TransactionRepository {
           var result = await transactions.doc(transaction.id).get();
 
           if (result.exists) {
-            await FirebaseUserRepository().updateUserBalance(uid: transaction.uid, balance: previousBalance - transaction.total);
+            await FirebaseUserRepository().updateUserBalance(
+                uid: transaction.uid,
+                balance: previousBalance - transaction.total);
+
             return Result.success(Transaction.fromJson(result.data()!));
           } else {
             return const Result.failed('Failed to create transaction data');
@@ -38,19 +47,22 @@ class FirebaseTransactionRepository implements TransactionRepository {
         return const Result.failed('Failed to create transaction data');
       }
     } catch (e) {
-      return const Result.failed('failed to create transaction data');
+      return const Result.failed('Failed to create transaction data');
     }
   }
 
   @override
-  Future<Result<List<Transaction>>> getUserTransactions({required String uid}) async {
-    firestore.CollectionReference<Map<String, dynamic>> transactions = _firebaseFirestore.collection('transactions');
+  Future<Result<List<Transaction>>> getUserTransactions(
+      {required String uid}) async {
+    firestore.CollectionReference<Map<String, dynamic>> transactions =
+        _firebaseFirestore.collection('transactions');
 
     try {
       var result = await transactions.where('uid', isEqualTo: uid).get();
 
       if (result.docs.isNotEmpty) {
-        return Result.success(result.docs.map((e) => Transaction.fromJson(e.data())).toList());
+        return Result.success(
+            result.docs.map((e) => Transaction.fromJson(e.data())).toList());
       } else {
         return const Result.success([]);
       }
@@ -58,5 +70,4 @@ class FirebaseTransactionRepository implements TransactionRepository {
       return const Result.failed('Failed to get user transactions');
     }
   }
-  
 }

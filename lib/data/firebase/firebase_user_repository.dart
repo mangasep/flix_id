@@ -62,7 +62,8 @@ class FirebaseUserRepository implements UserRepository {
         await documentReference.get();
 
     if (result.exists) {
-      return Result.success(result.data()![['balance']]);
+      print('balance ${result.data}');
+      return Result.success(result.data()!['balance']);
     } else {
       return const Result.failed('User not found');
     }

@@ -13,7 +13,7 @@ class Transaction with _$Transaction {
     required String title,
     @Default([]) List<String> seats,
     String? theaterName,
-    int? watchingTIme,
+    int? watchingTime,
     int? ticketAmount,
     int? ticketPrice,
     required int adminFee,
@@ -21,6 +21,5 @@ class Transaction with _$Transaction {
   }) = _Transaction;
 
   factory Transaction.fromJson(Map<String, dynamic> json) =>
-    _$TransactionFromJson(json);
-  
+      _$TransactionFromJson(json);
 }

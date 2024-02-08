@@ -123,7 +123,7 @@ class _TimeBookingPageState extends ConsumerState<TimeBookingPage> {
                                 title: widget.movieDetail.title,
                                 adminFee: 3000,
                                 total: 0,
-                                watchingTIme: DateTime(
+                                watchingTime: DateTime(
                                   selectedDate!.year,
                                   selectedDate!.month,
                                   selectedDate!.day,

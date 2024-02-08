@@ -27,7 +27,7 @@ mixin _$Transaction {
   String get title => throw _privateConstructorUsedError;
   List<String> get seats => throw _privateConstructorUsedError;
   String? get theaterName => throw _privateConstructorUsedError;
-  int? get watchingTIme => throw _privateConstructorUsedError;
+  int? get watchingTime => throw _privateConstructorUsedError;
   int? get ticketAmount => throw _privateConstructorUsedError;
   int? get ticketPrice => throw _privateConstructorUsedError;
   int get adminFee => throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ abstract class $TransactionCopyWith<$Res> {
       String title,
       List<String> seats,
       String? theaterName,
-      int? watchingTIme,
+      int? watchingTime,
       int? ticketAmount,
       int? ticketPrice,
       int adminFee,
@@ -80,7 +80,7 @@ class _$TransactionCopyWithImpl<$Res, $Val extends Transaction>
     Object? title = null,
     Object? seats = null,
     Object? theaterName = freezed,
-    Object? watchingTIme = freezed,
+    Object? watchingTime = freezed,
     Object? ticketAmount = freezed,
     Object? ticketPrice = freezed,
     Object? adminFee = null,
@@ -115,9 +115,9 @@ class _$TransactionCopyWithImpl<$Res, $Val extends Transaction>
           ? _value.theaterName
           : theaterName // ignore: cast_nullable_to_non_nullable
               as String?,
-      watchingTIme: freezed == watchingTIme
-          ? _value.watchingTIme
-          : watchingTIme // ignore: cast_nullable_to_non_nullable
+      watchingTime: freezed == watchingTime
+          ? _value.watchingTime
+          : watchingTime // ignore: cast_nullable_to_non_nullable
               as int?,
       ticketAmount: freezed == ticketAmount
           ? _value.ticketAmount
@@ -155,7 +155,7 @@ abstract class _$$TransactionImplCopyWith<$Res>
       String title,
       List<String> seats,
       String? theaterName,
-      int? watchingTIme,
+      int? watchingTime,
       int? ticketAmount,
       int? ticketPrice,
       int adminFee,
@@ -180,7 +180,7 @@ class __$$TransactionImplCopyWithImpl<$Res>
     Object? title = null,
     Object? seats = null,
     Object? theaterName = freezed,
-    Object? watchingTIme = freezed,
+    Object? watchingTime = freezed,
     Object? ticketAmount = freezed,
     Object? ticketPrice = freezed,
     Object? adminFee = null,
@@ -215,9 +215,9 @@ class __$$TransactionImplCopyWithImpl<$Res>
           ? _value.theaterName
           : theaterName // ignore: cast_nullable_to_non_nullable
               as String?,
-      watchingTIme: freezed == watchingTIme
-          ? _value.watchingTIme
-          : watchingTIme // ignore: cast_nullable_to_non_nullable
+      watchingTime: freezed == watchingTime
+          ? _value.watchingTime
+          : watchingTime // ignore: cast_nullable_to_non_nullable
               as int?,
       ticketAmount: freezed == ticketAmount
           ? _value.ticketAmount
@@ -250,7 +250,7 @@ class _$TransactionImpl implements _Transaction {
       required this.title,
       final List<String> seats = const [],
       this.theaterName,
-      this.watchingTIme,
+      this.watchingTime,
       this.ticketAmount,
       this.ticketPrice,
       required this.adminFee,
@@ -282,7 +282,7 @@ class _$TransactionImpl implements _Transaction {
   @override
   final String? theaterName;
   @override
-  final int? watchingTIme;
+  final int? watchingTime;
   @override
   final int? ticketAmount;
   @override
@@ -294,7 +294,7 @@ class _$TransactionImpl implements _Transaction {
 
   @override
   String toString() {
-    return 'Transaction(id: $id, uid: $uid, transactionTime: $transactionTime, transactionImage: $transactionImage, title: $title, seats: $seats, theaterName: $theaterName, watchingTIme: $watchingTIme, ticketAmount: $ticketAmount, ticketPrice: $ticketPrice, adminFee: $adminFee, total: $total)';
+    return 'Transaction(id: $id, uid: $uid, transactionTime: $transactionTime, transactionImage: $transactionImage, title: $title, seats: $seats, theaterName: $theaterName, watchingTime: $watchingTime, ticketAmount: $ticketAmount, ticketPrice: $ticketPrice, adminFee: $adminFee, total: $total)';
   }
 
   @override
@@ -312,8 +312,8 @@ class _$TransactionImpl implements _Transaction {
             const DeepCollectionEquality().equals(other._seats, _seats) &&
             (identical(other.theaterName, theaterName) ||
                 other.theaterName == theaterName) &&
-            (identical(other.watchingTIme, watchingTIme) ||
-                other.watchingTIme == watchingTIme) &&
+            (identical(other.watchingTime, watchingTime) ||
+                other.watchingTime == watchingTime) &&
             (identical(other.ticketAmount, ticketAmount) ||
                 other.ticketAmount == ticketAmount) &&
             (identical(other.ticketPrice, ticketPrice) ||
@@ -334,7 +334,7 @@ class _$TransactionImpl implements _Transaction {
       title,
       const DeepCollectionEquality().hash(_seats),
       theaterName,
-      watchingTIme,
+      watchingTime,
       ticketAmount,
       ticketPrice,
       adminFee,
@@ -363,7 +363,7 @@ abstract class _Transaction implements Transaction {
       required final String title,
       final List<String> seats,
       final String? theaterName,
-      final int? watchingTIme,
+      final int? watchingTime,
       final int? ticketAmount,
       final int? ticketPrice,
       required final int adminFee,
@@ -387,7 +387,7 @@ abstract class _Transaction implements Transaction {
   @override
   String? get theaterName;
   @override
-  int? get watchingTIme;
+  int? get watchingTime;
   @override
   int? get ticketAmount;
   @override

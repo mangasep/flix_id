@@ -17,7 +17,7 @@ _$TransactionImpl _$$TransactionImplFromJson(Map<String, dynamic> json) =>
           (json['seats'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
       theaterName: json['theaterName'] as String?,
-      watchingTIme: json['watchingTIme'] as int?,
+      watchingTime: json['watchingTime'] as int?,
       ticketAmount: json['ticketAmount'] as int?,
       ticketPrice: json['ticketPrice'] as int?,
       adminFee: json['adminFee'] as int,
@@ -33,7 +33,7 @@ Map<String, dynamic> _$$TransactionImplToJson(_$TransactionImpl instance) =>
       'title': instance.title,
       'seats': instance.seats,
       'theaterName': instance.theaterName,
-      'watchingTIme': instance.watchingTIme,
+      'watchingTime': instance.watchingTime,
       'ticketAmount': instance.ticketAmount,
       'ticketPrice': instance.ticketPrice,
       'adminFee': instance.adminFee,

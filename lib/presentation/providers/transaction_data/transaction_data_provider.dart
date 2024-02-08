@@ -46,9 +46,8 @@ class TransactionData extends _$TransactionData {
           state = AsyncData(transactions);
         case Failed(:final message):
           state = AsyncError(FlutterError(message), StackTrace.current);
-          state = AsyncData(state.valueOrNull ?? const[]);
+          state = AsyncData(state.valueOrNull ?? const []);
       }
     }
   }
-  
 }

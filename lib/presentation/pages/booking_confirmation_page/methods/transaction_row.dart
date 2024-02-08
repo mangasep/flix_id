@@ -19,7 +19,7 @@ Widget transactionRow(
           ),
           horizontalSpace(20),
           SizedBox(
-            width: width - 11 - 20,
+            width: width - 110 - 20,
             child: Text(value),
           )
         ],
